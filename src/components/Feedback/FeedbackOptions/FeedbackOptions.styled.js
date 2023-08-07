@@ -9,7 +9,7 @@ export const BtnWrapper = styled.div`
   justify-content: space-between;
   margin-bottom: ${({ theme }) => theme.spacing(3)};
 `;
-export const Button = styled.button`
+export const StyledButton = styled.button`
   padding: 5px 10px;
   border: none;
   border-radius: 8px;

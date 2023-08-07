@@ -1,19 +1,22 @@
-import { BtnWrapper, Button } from './FeedbackOptions.styled';
+import { BtnWrapper, StyledButton } from './FeedbackOptions.styled';
 import PropTypes from 'prop-types';
 
-export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
+export const FeedbackOptions = ({ onLeaveFeedback }) => {
   return (
     <BtnWrapper>
-      {options.map((key, index) => (
-        <Button key={index} onClick={() => onLeaveFeedback(key)}>
-          {key}
-        </Button>
-      ))}
+      <StyledButton type="button" onClick={() => onLeaveFeedback('good')}>
+        Good
+      </StyledButton>
+      <StyledButton type="button" onClick={() => onLeaveFeedback('neutral')}>
+        Neutral
+      </StyledButton>
+      <StyledButton type="button" onClick={() => onLeaveFeedback('bad')}>
+        Bad
+      </StyledButton>
     </BtnWrapper>
   );
 };
 
 FeedbackOptions.propTypes = {
-  options: PropTypes.arrayOf(PropTypes.string).isRequired,
   onLeaveFeedback: PropTypes.func.isRequired,
 };
